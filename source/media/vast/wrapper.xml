@@ -1,0 +1,46 @@
+<VAST version="2.0">
+    <Ad id="1484775629824">
+        <Wrapper>
+            <AdSysytem>Stailamedia Engine</AdSysytem>
+            <VASTAdTagURI>
+                <![CDATA[http://herowebplayer.dev/media/vast/document.xml]]>
+            </VASTAdTagURI>
+            <Creatives>
+                <Creative sequence="1" id="82e9ae68b37e2a19931ab8a87a44a213">
+                    <Linear>
+                        <Duration>00:00:30</Duration>
+                        <TrackingEvents/>
+                        <MediaFiles>
+                            <MediaFile delivery="progressive" bitrate="736" width="640" height="360" type="video/mp4">http://tags-staging.stailamedia.com/video/sample/lo.mp4</MediaFile>
+                            <MediaFile delivery="progressive" bitrate="736" width="640" height="360" type="video/webm">http://tags-staging.stailamedia.com/video/sample/lo.webm</MediaFile>
+                            <MediaFile delivery="progressive" bitrate="3072" width="1280" height="720" type="video/mp4">http://tags-staging.stailamedia.com/video/sample/hi.mp4</MediaFile>
+                            <MediaFile delivery="progressive" bitrate="3072" width="1280" height="720" type="video/webm">http://tags-staging.stailamedia.com/video/sample/hi.webm</MediaFile>
+                            <MediaFile delivery="progressive" bitrate="256" width="640" height="480" type="image/gif">http://tags-staging.stailamedia.com/video/sample/img.gif</MediaFile>
+                        </MediaFiles>
+                        <VideoClicks>
+                            <ClickThrough>http://www.stailamedia.com</ClickThrough>
+                        </VideoClicks>
+                    </Linear>
+                </Creative>
+                <Creative sequence="1" id="c45e1603823ae9644998a3637e96dad7">
+                    <Linear>
+                        <Duration>00:00:30</Duration>
+                        <TrackingEvents/>
+                        <MediaFiles>
+                            <MediaFile delivery="progressive" bitrate="736" width="640" height="360" type="video/mp4">https://creatives.stailamedia.com/videos/a64caef7add6ec39b92fb4aab0c105bb/MP4low.mp4</MediaFile>
+                            <MediaFile delivery="progressive" bitrate="736" width="640" height="360" type="video/webm">https://creatives.stailamedia.com/videos/a64caef7add6ec39b92fb4aab0c105bb/WEBMlow.webm</MediaFile>
+                            <MediaFile delivery="progressive" bitrate="3072" width="1280" height="720" type="video/mp4">https://creatives.stailamedia.com/videos/a64caef7add6ec39b92fb4aab0c105bb/MP4high.mp4</MediaFile>
+                            <MediaFile delivery="progressive" bitrate="3072" width="1280" height="720" type="video/webm">https://creatives.stailamedia.com/videos/a64caef7add6ec39b92fb4aab0c105bb/WEBMhigh.webm</MediaFile>
+                            <MediaFile delivery="progressive" bitrate="256" width="640" height="480" type="image/gif">https://creatives.stailamedia.com/videos/a64caef7add6ec39b92fb4aab0c105bb/GIF.gif</MediaFile>
+                        </MediaFiles>
+                        <VideoClicks>
+                            <ClickThrough>http://www.jmvc.org</ClickThrough>
+                        </VideoClicks>
+                    </Linear>
+                </Creative>
+            </Creatives>
+            <Impression><![CDATA[https://uip.semasio.net/stailamedia/1/iframe/info?_referrer=01net.com&_ignore=1484775629824]]></Impression>
+            <!--<Impression><![CDATA[https://uip.semasio.net/stailamedia/1/iframe/info?_referrer=02net.com&_ignore=1484775629824]]></Impression>-->
+        </Wrapper>
+    </Ad>
+</VAST>

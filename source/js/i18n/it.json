@@ -1,0 +1,9 @@
+{
+	"fullscreen" : "launch fullscreen",
+	"play" : "play",
+	"pause" : "pausa",
+	"volume_change" : "cambia livello volume",
+	"mute" : "muto",
+	"unmute" : "non muto",
+	"settings" : "impostazioni"
+}

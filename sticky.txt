@@ -1,0 +1,32 @@
+what is needed
+- new webapp AWS (nodejs) served on //sti.stailamedia.com
+- a proxy controller
+- a transforming controller
+
+START
+
+we need a creative on publisherFOOFOO.dev
+------------------
+
+SM maintains a id<>publisher map
+in this case publisherFOOFOO.dev corresponds to id SM12345
+
+
+<iframe id="ifrIDabcd">
+
+</iframe>
+
+
+
+
+--------------------
+we have the creative
+--------------------
+
+
+
+to the player > use //sub.domain.ext/ctrl/12345
+
+
+
+1st Vast url : //sub.domain.ext/ctrl

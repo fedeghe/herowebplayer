@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VAST version="2.0">
+    <Ad id="92b615815b541785ab686b1905966b07">
+        <InLine>
+            <AdSystem>StailamediaLighthouse</AdSystem>
+            <AdTitle>fede</AdTitle>
+            <Description>fede</Description>
+            <Creatives>
+                <Creative sequence="1" id="92b615815b541785ab686b1905966b07">
+                    <Linear>
+                        <Duration>00:00:30</Duration>
+                        <TrackingEvents/>
+                        <MediaFiles>
+                            <MediaFile delivery="progressive" bitrate="736" width="640" height="360" type="video/mp4">https://creatives.stailamedia.com/videos/1a723741c2276832a6a7c1b5b5083380/MP4low.mp4</MediaFile>
+                            <MediaFile delivery="progressive" bitrate="736" width="640" height="360" type="video/webm">https://creatives.stailamedia.com/videos/1a723741c2276832a6a7c1b5b5083380/WEBMlow.webm</MediaFile>
+                            <MediaFile delivery="progressive" bitrate="3072" width="1280" height="720" type="video/mp4">https://creatives.stailamedia.com/videos/1a723741c2276832a6a7c1b5b5083380/MP4high.mp4</MediaFile>
+                            <MediaFile delivery="progressive" bitrate="3072" width="1280" height="720" type="video/webm">https://creatives.stailamedia.com/videos/1a723741c2276832a6a7c1b5b5083380/WEBMhigh.webm</MediaFile>
+                            <MediaFile delivery="progressive" bitrate="256" width="640" height="480" type="image/gif">https://creatives.stailamedia.com/videos/1a723741c2276832a6a7c1b5b5083380/GIF.gif</MediaFile>
+                        </MediaFiles>
+                        <VideoClicks>
+                            <ClickThrough>http://www.freakstyle.it</ClickThrough>
+                        </VideoClicks>
+                    </Linear>
+                </Creative>
+            </Creatives>
+            <Extensions/>
+        </InLine>
+    </Ad>
+</VAST>

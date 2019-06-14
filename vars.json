@@ -1,0 +1,44 @@
+{
+	"NS" : "HWP",
+	"VERSION" : {
+		"WIDGZARD" : 0.2,
+		"ENGY" : 0.3
+	},
+	"DOMAIN" : "www.herowebplayer.loc",
+	"SERVICE_DOMAIN" : "//www.herowebplayer.loc",
+	"DEFAULT_PROTO" : "http:",
+	"ADBLOCKER_CHECK" : "$SERVICE_DOMAIN$/js/adblock_notify.js",
+	"APPLICATION" : {
+		"NAME" : "Hero Web Player",
+		"VERSION" : "0.0.1",
+		"AUTHOR" : "Federico Ghedina <federico.ghedina@gmail.com>",
+		"LICENSE" : ""
+	},
+	"COMPONENTS" : {
+		"NAME_PREPEND" : "",
+		"NAME_POSTPEND" : ".js",
+		"URL" : "/js/components/"
+	},
+	"EVENTS" : {
+		"TRACKING" : {
+			"ENTRY_POINT" : "/ev.php"
+		}
+	},
+	"TIMELAPSE" : {
+		"FREQUENCY" : 2, 
+		"START_DELAY" : 1E3, 
+		"END_OF_TIMES" : 300E3
+	},
+	"DEBUG_MESSAGES" : true,
+	"LANGS_URI" : "js/i18n",
+	"TEST_IMG_PATH" : "/media/swipeme0.png",
+	"BANDWIDTH_LOW2MEDIUM" : 400,
+	"BANDWIDTH_MEDIUM2HIGH" : 1000,
+	"BANDWIDTH_HIGH2LIGHT" : 1700,
+	"COMPONENTS" : {
+		"EXT" : ".js",
+		"URL" : "/js/components/",
+		"NAME_PREPEND" : ""
+	},
+	"DEFAULT_LANG" : "en"
+}

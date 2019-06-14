@@ -1,0 +1,10 @@
+{
+	"fullscreen" : "fullscreen",
+	"play" : "play",
+	"pause" : "pause",
+	"volume_change" : "change volume level",
+	"mute" : "mute",
+	"unmute" : "unmute",
+	"settings" : "settings",
+	"screenshot" : "get screenshot"
+}

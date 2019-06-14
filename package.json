@@ -1,0 +1,19 @@
+{
+    "name": "herowebplayer",
+    "version": "1.0.0",
+    "description": "my web player",
+    "main": "index.js",
+    "scripts": {
+        "buildev": "malta buildev.json",
+        "build": "malta build.json",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "malta": "^3.9.16",
+        "malta-browser-refresh": "^1.2.2",
+        "malta-js-obfuscator": "^1.0.11",
+        "malta-less": "^1.0.7"
+    }
+}

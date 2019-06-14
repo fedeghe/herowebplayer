@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VAST version="4.0">
+	<Error></Error>
+	<Ad id="" sequence="" conditionalAd="">
+		<Wrapper followAdditionalWrappers="" allowMultipleAds="" fallbackOnNoAd="">
+			<Impression id=""></Impression>
+			<VASTAdTagURI></VASTAdTagURI>
+			<AdSystem version=""></AdSystem>
+			<Pricing model="" currency=""></Pricing>
+			<Error></Error>
+			<ViewableImpression id="">
+				<Viewable></Viewable>
+				<NotViewable></NotViewable>
+				<ViewUndetermined></ViewUndetermined>
+			</ViewableImpression>
+			<AdVerifications>
+				<Verification vendor="">
+					<ViewableImpression id=""></ViewableImpression>
+				</Verification>
+			</AdVerifications>
+			<Extensions>
+				<Extension type=""></Extension>
+			</Extensions>
+			<Creatives>
+				<Creative id="" sequence="" adId="">
+					<Linear>
+						<TrackingEvents>
+							<Tracking event="" offset=""></Tracking>
+						</TrackingEvents>
+						<VideoClicks>
+							<ClickTracking id=""></ClickTracking>
+							<CustomClick id=""></CustomClick>
+						</VideoClicks>
+						<Icons>
+							<Icon program="" width="" height="" xPosition="" yPosition="" duration="" offset="" apiFramework="" pxratio="">
+								<StaticResource creativeType=""></StaticResource>
+								<IFrameResource creativeType=""></IFrameResource>
+								<HTMLResource creativeType=""></HTMLResource>
+								<IconClicks>
+									<IconClickThrough></IconClickThrough>
+									<IconClickTracking id=""></IconClickTracking>
+								</IconClicks>
+								<IconViewTracking></IconViewTracking>
+							</Icon>
+						</Icons>
+					</Linear>
+				</Creative>
+			</Creatives>
+		</Wrapper>
+	</Ad>
+</VAST>

@@ -1,0 +1,6 @@
+{
+	"source/js/lib/herowebplayer.js" : "js/ -vars=vars.json -plugins=malta-js-toolkit[lockScriptUrl:'//herowebplayer.dev/js/herowebplayer.js']...malta-header-comment[name:\"license.txt\"]",
+	"source/js/components/*.js" : "js/components/ -vars=vars.json -plugins=malta-js-uglify...malta-header-comment[name:'license.txt']",
+	"source/less/hwp.less" : "css/ -vars=vars.json -plugins=malta-less...malta-css-uglify...malta-header-comment[name:'license.txt']",
+	"source/js/*.js" : "js/ -vars=vars.json -plugins=malta-js-toolkit[lockScriptUrl:'//herowebplayer.dev/js/index.js']...malta-header-comment[name:'license.txt']"
+}
