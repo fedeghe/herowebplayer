@@ -10,7 +10,7 @@ HWP.render({
 		sources : {
 			mp4 : 'media/sintel.mp4',
 			webm : 'media/sintel.webm',
-			ogg : 'media/sintel.ogv',
+			// ogg : 'media/sintel.ogv', TOO BIG
 			poster : 'media/sintel.png',
 			tracks : [{
 				'default' : 'default',
