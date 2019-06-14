@@ -9,7 +9,7 @@
 	"source/js/i18n/*.json" : "js/i18n",
 	"source/js/*.js" : "js -vars=vars.json",
 
-    "source/front/*.html" : ". -plugins=malta-browser-refresh[files:\"*\"]",
+    "source/front/*.html" : ". -plugins=malta-browser-refresh[files:\"*\"]...malta-dev-srv",
 	"source/front/script.js" : "js -vars=vars.json",
     "source/front/vast.js" : "js -vars=vars.json",
 	"source/front/style.less" : "css -plugins=malta-less -vars=vars.json ",

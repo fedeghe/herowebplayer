@@ -17,3 +17,12 @@
 - clean unified API
 
 - bandWidth selection (part of __VAST__)
+
+
+### try
+```
+npm i
+npm run buildev
+// let it go
+```
+navigate to http://localhost:3001
