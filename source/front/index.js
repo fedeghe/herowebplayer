@@ -6,7 +6,7 @@ HWP.render({
 	params : {
 		lang : 'en',
 		width : 640,
-		ratio : 16/9,
+		ratio : 16 / 9,
 		sources : {
 			mp4 : 'media/sintel.mp4',
 			webm : 'media/sintel.webm',
@@ -41,7 +41,9 @@ HWP.render({
 		// controls ... this is not allowed obviously
 		supportMessage : 'Your browser does not support the video tag',
 		// timelapse : "img/swipeme0.png?t=%tl_time%&bc=%tl_burstcount%&cb=%tl_cachebuster%",
-		// timelapse : function (data) {console.log(data);},
+		timelapse : function (data) {
+            console.log(data);
+        },
 		events : {
 			onadblocker : function () {alert("PLEASE consider to DISABLE the Ad-blocker");},
 			onstarted : function (){

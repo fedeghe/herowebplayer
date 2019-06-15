@@ -49,7 +49,7 @@ HWP.render({
 		// controls ... this is not allowed obviously
 		supportMessage : 'Your browser does not support the video tag',
 		// timelapse : "img/swipeme0.png?t=%tl_time%&bc=%tl_burstcount%&cb=%tl_cachebuster%",
-		// timelapse : function (data) {console.log(data);},
+		timelapse : function (data) {console.log(data);},
 		events : {
 			onadblocker : function () {
 				// alert("PLEASE consider to DISABLE the Ad-blocker");

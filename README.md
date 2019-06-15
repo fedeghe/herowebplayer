@@ -1,4 +1,4 @@
-## FEATURES
+## FEATURES (wanted)
 
 - iab
 	- __VAST__ video ad serving template (2, 3, 4)
@@ -12,8 +12,12 @@
 	
 - plugin development
 
-- live box + time track
+### done
 
+- live box
+allows to bind a function to 
+- time track
+exaustive timetracking functionality to track visibility using the `timelapse` parameter (function or url)
 - clean unified API
 
 - bandWidth selection (part of __VAST__)
