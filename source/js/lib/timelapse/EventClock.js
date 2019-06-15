@@ -54,7 +54,7 @@ EventClock.prototype.track = function () {
 	var self = this,
 		img, body = document.body,
 		params = {
-			time : (self.tot/1e3).toFixed(1),
+			time : parseFloat((self.tot / 1E3).toFixed(1), 10),
 			burstCount : self.burstCount,
 			cachebuster : self.rnd
 		};
