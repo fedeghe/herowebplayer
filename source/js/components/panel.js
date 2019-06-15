@@ -55,7 +55,7 @@ PANEL = {
 			self.data.showPreviewAt = function (p, e) {
 				
 				var duration = $video.duration,
-					t = duration * (p/100),
+					t = duration * (p / 100),
 					time = self.descendant(1, 0);
 
 				
@@ -129,11 +129,9 @@ PANEL = {
 				data = self.data,
 				video = self.getNode('mainvideo'),
 				$video = video.node,
-				preview;
+                preview;
 
 			data.video = $video;
-
-
 
 			$NS$.events.on($elf, 'click', function (e) {
 				preview = preview || self.parent.childrens[0];
@@ -149,16 +147,10 @@ PANEL = {
 				video.data.trigger('onseek', [e, parseFloat(data.video.currentTime.toFixed(2), 10), parseFloat((100*data.video.currentTime/data.video.duration).toFixed(2), 10) ])
 			});
 
-
-
-
-
 			if (data.timeline.preview == false) {
 				self.done();
 				return;
 			}
-
-			
 
 			$NS$.events.on($elf, 'mouseenter', function (e) {
 				preview = preview || self.parent.childrens[0];
