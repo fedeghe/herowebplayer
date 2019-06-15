@@ -50,23 +50,25 @@ PLAYER = {
 	},
 	end : function () {
 		var self = this,
-			$elf = self.node;
+            $elf = self.node,
+            video = self.getNode('mainvideo'),
 			show = function () {
 				var $panel = self.getNode('panel').node;
-					
-				$NS$.dom.addClass($panel, 'visible');
+                $NS$.dom.addClass($panel, 'visible');
+                video.data.trigger('onshowpanel');
 				$elf.style.cursor = 'default';
 			},
 			hide = function () {
 				var $panel = self.getNode('panel').node;
-				$NS$.dom.removeClass($panel, 'visible');
+                $NS$.dom.removeClass($panel, 'visible');
+                video.data.trigger('onhidepanel');
 				$elf.style.cursor = 'none';
 			};
 		
-		$NS$.events.on($elf, 'mouseover', show);
-		$NS$.events.on($elf, 'mousemove', show);
+		$NS$.events.on($elf, 'mouseenter', show);
+		// $NS$.events.on($elf, 'mousemove', show);
 		$NS$.events.on($elf, 'click', show);
-		$NS$.events.on($elf, 'mouseout', hide);
+		$NS$.events.on($elf, 'mouseleave', hide);
 		$NS$.events.onNoEvent($elf, hide, 5000);
 	},
 
@@ -337,6 +339,7 @@ PLAYER = {
 					$elf.visible = false;
 				},
 				whenChange : function () {
+                    
 					data.trigger('onvisibilitychange', arguments)
 				},
 				once : false,
