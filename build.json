@@ -1,12 +1,16 @@
 {
-	"#source/js/lib/herowebplayer.js" : "js -require=malta-js-obfuscator -vars=vars.json",
+    "EXE" : [
+        "rm -rf js",
+        "mkdir -p css js/lib js/components js/i18n",
+        "cp -R source/media ."
+    ],
+	"#source/js/lib/herowebplayer.js" : "js -require=malta-js-obfuscator...malta-header-comment[name:'source/license.txt'] -vars=vars.json",
 	"#source/js/components/*.js" : "js/components -vars=vars.json",
+	"#source/js/i18n/*.js" : "js/components -vars=vars.json",
 	"#source/js/*.js" : "js -vars=vars.json",
+    "#source/less/hwp.less" : "css -plugins=malta-less -vars=vars.json",
 
     "#source/front/*.html" : ".",
-	"#source/front/script.js" : "js -vars=vars.json",
-    "#source/front/vast.js" : "js -vars=vars.json",
-    "#source/front/style.less" : "css -plugins=malta-less -vars=vars.json ",
-    
-	"#source/less/hwp.less" : "css -plugins=malta-less -vars=vars.json"
+	"#source/front/*.js" : "js -vars=vars.json",
+    "#source/front/*.less" : "css -plugins=malta-less -vars=vars.json "
 }
