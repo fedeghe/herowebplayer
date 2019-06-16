@@ -15,10 +15,11 @@
 ### done
 
 - live box
-allows to bind a function to 
+allows to bind a function to visibility perc change
 - time track
-exaustive timetracking functionality to track visibility using the `timelapse` parameter (function or url)
-- clean unified API
+exaustive timetracking functionality to track visibility using the `timelapse` parameter (through function or tracking px)
+- a lot of events: onadblocker, onstarted, onended, onerror, onloaded, onloadeddata, onloadedmetadata, onplay, onpause, ontimeupdate, onprogress, onfullscreenon, onfullscreenoff, onclickthrough, onmute, onunmute, onvolumechange, onseek, onpreview, onvisible, oninvisible, onvisibilitychange, onsettingson, onsettingsoff, onshowpanel, onhidepanel, onscreenshot  
+- exaustive configuration
 
 - bandWidth selection (part of __VAST__)
 
