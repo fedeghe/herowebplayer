@@ -242,4 +242,4 @@ FILTERS = {
 	cb : function () {
 		this.done();
 	}
-}
+};

@@ -80,8 +80,7 @@ $NS$.makeNS('$NS$/util');
         $NS$.util.connection.Kbps = parseFloat(Kbps.toFixed(2), 10);
         $NS$.util.connection.KBps = parseFloat(KBps.toFixed(2), 10);
         $NS$.util.connection.Mbps = parseFloat(Mbps.toFixed(2), 10);
-        $NS$.util.connection.MBps = parseFloat(MBps.toFixed(2), 10);
-        
+        $NS$.util.connection.MBps = parseFloat(MBps.toFixed(2), 10);        
         $NS$.util.connection.ms = mstime;
         $NS$.util.connection.bytes = totB;
 
@@ -97,4 +96,3 @@ $NS$.makeNS('$NS$/util');
         $NS$.Channel.get($NS$.id).pub('gotBandWidth');
     });
 })();
-

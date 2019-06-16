@@ -394,4 +394,4 @@ PLAYER = {
 			self.done();
 		}
 	}]
-}
+};

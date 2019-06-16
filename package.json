@@ -6,12 +6,19 @@
     "scripts": {
         "buildev": "malta buildev.json",
         "build": "malta build.json",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint source"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
         "@fedeghe/channeljs": "^1.2.0",
+        "eslint": "^5.15.1",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.16.0",
+        "eslint-plugin-node": "^8.0.1",
+        "eslint-plugin-promise": "^4.0.1",
+        "eslint-plugin-standard": "^4.0.0",
         "malta": "^3.9.16",
         "malta-browser-refresh": "^1.2.2",
         "malta-dev-srv": "^1.1.1",
@@ -19,6 +26,6 @@
         "malta-js-obfuscator": "^1.0.11",
         "malta-js-toolkit": "^1.0.11",
         "malta-less": "^1.0.7",
-        "widgzard": "^3.1.13"
+        "widgzard": "^3.1.15"
     }
 }

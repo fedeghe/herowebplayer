@@ -1,5 +1,7 @@
+/* eslint-disable no-console */
 var target = document.getElementById('trg1');
 
+// eslint-disable-next-line no-undef
 HWP.render({
     target: target,
     settings: {
@@ -13,7 +15,7 @@ HWP.render({
             poster: 'media/sintel.png',
             tracks: [{
                 'default': 'default',
-                src: 'media/text-en.vtt', //the url of the track file
+                src: 'media/text-en.vtt', // the url of the track file
                 kind: 'subtitles', // choose among [captions, chapters, descriptions, metadata, subtitles]
                 srclang: 'en', // language code
                 label: '' // just text
@@ -27,7 +29,7 @@ HWP.render({
         preload: 'preload',
         volume: 0.25,
         buttons: {
-            size: "large"
+            size: 'large'
         },
         panel: {
             visible: true,
@@ -133,13 +135,12 @@ HWP.render({
             onhidepanel: function () {
                 console.debug('on panel hidden', arguments);
             },
-            onscreenshot: function() {
+            onscreenshot: function () {
                 console.debug('on screenshot taken', arguments);
             }
-
-		}
+        }
     }
 }).then(function (p, res) {
     var player = res[0];
-})
-
+    console.log(player);
+});

@@ -129,4 +129,4 @@ SETTINGS = {
 		
 		self.done();
 	}
-}
+};
