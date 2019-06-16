@@ -11,7 +11,7 @@ $$mod.js$$
 $$events.js$$
 $$eventsHooks.js$$
 $$string.js$$
-$$channel.js$$
+$$ext/channel.js$$
 $$cookie.js$$
 $$livebox.js$$
 $$timelapse.js$$
@@ -20,7 +20,7 @@ $$xmlParser.js$$
 $$vast.js$$
 $$i18n.js$$
 $$promise.js$$
-$$widgzard.js$$
+$$ext/widgzard.js$$
 $$engy.js$$
 $$speedTest.js$$
 $$eventsTracker.js$$

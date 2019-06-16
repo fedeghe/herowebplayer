@@ -48,7 +48,7 @@ PANEL = {
 				$elf = self.node,
 				mainVideo = self.getNode('mainvideo'),
 				$mainVideo = mainVideo.node,
-				video = self.childrens[2],
+				video = self.children[2],
 				panel = self.parent,
 				$video = video.node;
 
@@ -58,7 +58,6 @@ PANEL = {
 					t = duration * (p / 100),
 					time = self.descendant(1, 0);
 
-				
 				time.node.innerHTML = $NS$.util.formatMs(t);
 				
 				t = parseFloat(t.toFixed(2), 10);
@@ -134,7 +133,7 @@ PANEL = {
 			data.video = $video;
 
 			$NS$.events.on($elf, 'click', function (e) {
-				preview = preview || self.parent.childrens[0];
+				preview = preview || self.parent.children[0];
 				var w = $elf.clientWidth,
 					coordX = $NS$.events.getOffset(e, $elf)[0],
 					position = coordX;
@@ -153,17 +152,17 @@ PANEL = {
 			}
 
 			$NS$.events.on($elf, 'mouseenter', function (e) {
-				preview = preview || self.parent.childrens[0];
+				preview = preview || self.parent.children[0];
 				$NS$.css.style(preview.node, 'display' , 'block');
 			});
 			
 			$NS$.events.on($elf, 'mouseleave', function (e) {
-				preview = preview || self.parent.childrens[0];
+				preview = preview || self.parent.children[0];
 				$NS$.css.style(preview.node, 'display' , 'none');
 			});
 
 			$NS$.events.on($elf, 'mousemove', function (e) {
-				preview = preview || self.parent.childrens[0];
+				preview = preview || self.parent.children[0];
 				var w = $elf.clientWidth,
 					coordX = $NS$.events.getOffset(e, $elf)[0],
 					position = coordX - preview.node.clientWidth/2;
@@ -192,7 +191,7 @@ PANEL = {
 			// this.data.addAdMarker(50,0.5);
 		}
 	},{
-		attrs : {"class" : "actions"},
+		attrs : {"class" : "actions group"},
 		content : [{
 			tag : 'span',
 			wid : "panelPlayButton",
@@ -212,14 +211,14 @@ PANEL = {
 				$NS$.events.on($video, ['play', 'pause'], function() {
 					var versus = ['fa-play', 'fa-pause'];
 					if (!vdata.isPlaying) versus = versus.reverse();
-					$NS$.dom.switchClass.apply(null, [self.childrens[0].node].concat(versus));
+					$NS$.dom.switchClass.apply(null, [self.children[0].node].concat(versus));
 					$NS$.dom.attr($elf, {title :
 						vdata.isPlaying ? $NS$.i18n.get('pause') : $NS$.i18n.get('play')
 					});
 				});
 
 				// $NS$.events.on($video, 'pause', function() {
-				// 	$NS$.dom.switchClass(self.childrens[0].node, 'fa-pause', 'fa-play');
+				// 	$NS$.dom.switchClass(self.children[0].node, 'fa-pause', 'fa-play');
 				// });
 
 				self.done();
@@ -250,12 +249,9 @@ PANEL = {
 					video = self.getNode('mainvideo'),
 					$video = video.node;
 				
-				if ($video.volume > 0) {
-					$NS$.dom.switchClass(self.childrens[0].node, 'fa-volume-off', 'fa-volume-up');
-				}
+				
 
 				$NS$.events.on($elf, 'click', function(e){
-
 					var vol = $video.volume,
 						volumeinput = self.getNode('volumeinput'),
 						$volumeinput = volumeinput.node,
@@ -268,12 +264,12 @@ PANEL = {
 						$video.muted = false;
 						$video.removeAttribute('muted');
 						$volumeinput.value = volumeinput.data.vol;
-						$NS$.dom.switchClass(self.childrens[0].node, 'fa-volume-off', 'fa-volume-up');
+						$NS$.dom.switchClass(self.children[0].node, 'fa-volume-off', 'fa-volume-up');
 						$NS$.dom.attr($elf, {title : $NS$.i18n.get('mute')});
 						video.data.trigger('onunmute', [e]);
 					} else {
 						$volumeinput.value = 0;
-						$NS$.dom.switchClass(self.childrens[0].node, 'fa-volume-up', 'fa-volume-off');
+						$NS$.dom.switchClass(self.children[0].node, 'fa-volume-up', 'fa-volume-off');
 						$NS$.dom.attr($elf, {title : $NS$.i18n.get('unmute')});
 						video.data.trigger('onmute', [e]);
 					}
@@ -284,7 +280,10 @@ PANEL = {
 				var self = this,
 					$elf = self.node,
 					video = self.getNode('mainvideo'),
-					$video = video.node;
+                    $video = video.node;
+                if ($video.volume > 0) {
+                    $NS$.dom.switchClass(self.children[0].node, 'fa-volume-off', 'fa-volume-up');
+                }
 				$NS$.dom.attr($elf, {title : $video.volume ? $NS$.i18n.get('mute') : $NS$.i18n.get('unmute')});
 			}
 		},{
@@ -490,12 +489,14 @@ PANEL = {
 		},{
 			component : "settings",
 			params : "#PARAM{settings}"
-		},'clearer']
+        }
+        // ,'clearer'
+        ]
 	}],
 	cb : function () {
 		var self = this,
 			$elf = self.node,
-			video = self.parent.childrens[0].node,//getNode('video').node,
+			video = self.parent.children[0].node,//getNode('video').node,
 			playing = true;
 
 		$NS$.dom.addClass($elf, self.data.config.theme);
