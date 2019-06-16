@@ -94,7 +94,7 @@ $NS$.makeNS('$NS$/util');
         
         // publish the event that will unleash Engy in the main.js
         //
-        $NS$.Channel($NS$.id).pub('gotBandWidth');
+        $NS$.Channel.get($NS$.id).pub('gotBandWidth');
     });
 })();
 

@@ -11,12 +11,14 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@fedeghe/channeljs": "^1.2.0",
         "malta": "^3.9.16",
         "malta-browser-refresh": "^1.2.2",
         "malta-dev-srv": "^1.1.1",
         "malta-header-comment": "^1.0.5",
         "malta-js-obfuscator": "^1.0.11",
         "malta-js-toolkit": "^1.0.11",
-        "malta-less": "^1.0.7"
+        "malta-less": "^1.0.7",
+        "widgzard": "^3.1.11"
     }
 }

@@ -58,7 +58,7 @@ $NS$.vast = (function () {
 				&& oVast.companions[0].companionImage
 				&& oVast.companions[0].companionLabel) {
 				
-				$NS$.Channel(options.ChannelID).pub('foundCompanion', [
+				$NS$.Channel.get(options.ChannelID).pub('foundCompanion', [
 			 		oVast.companions[0].companionImage,
 			 		oVast.companions[0].companionLabel
 			 	]);
@@ -132,7 +132,7 @@ $NS$.vast = (function () {
 				&& oVast.companions[0].companionImage
 				&& oVast.companions[0].companionLabel
 			) {
-				$NS$.Channel(options.ChannelID).pub('foundCompanion', [
+				$NS$.Channel.get(options.ChannelID).pub('foundCompanion', [
 					oVast.companions[0].companionImage,
 					oVast.companions[0].companionLabel
 				]);
@@ -150,7 +150,7 @@ $NS$.vast = (function () {
 		
 		if ($NS$.IN_READ && !oVast.linears.length) {
 
-			$NS$.Channel(options.ChannelID).pub('noLinearsShutUpInRead');
+			$NS$.Channel.get(options.ChannelID).pub('noLinearsShutUpInRead');
 			return false;
 		}
 
@@ -191,7 +191,7 @@ $NS$.vast = (function () {
 				debugger;
 				videoPlayer.addEventListener('timeupdate', function () {
 					var current_time = Math.floor(videoPlayer.currentTime)
-					$NS$.Channel(options.ChannelID).pub('video_progress', [~~(100 * (current_time/linear.duration))]);
+					$NS$.Channel.get(options.ChannelID).pub('video_progress', [~~(100 * (current_time/linear.duration))]);
 				});
 			},*/
 			_timeupdate  = function(event) {
@@ -499,7 +499,7 @@ $NS$.vast = (function () {
 		progress && videoPlayer.addEventListener('timeupdate', function () {
 			var current_time = Math.floor(videoPlayer.currentTime);
 
-			$NS$.Channel(options.ChannelID).pub('video_progress', [~~(100 * (current_time/linear.duration))]);
+			$NS$.Channel.get(options.ChannelID).pub('video_progress', [~~(100 * (current_time/linear.duration))]);
 		});
 
 

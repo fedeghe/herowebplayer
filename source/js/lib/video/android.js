@@ -175,7 +175,7 @@ PreviewInlineVideoANDROID.prototype = {
 
             self.video.removeEventListener('click', _);
             self.video.addEventListener('ended', self._ended);
-            $NS$.Channel($NS$.aid).pub('do_skippable');
+            $NS$.Channel.get($NS$.aid).pub('do_skippable');
         });
         self._startPreview();
         return true;
@@ -184,7 +184,7 @@ PreviewInlineVideoANDROID.prototype = {
     _ended : function () {
         var self = this;
         $NS$.dom.attr(self.video, 'stealth', 'stealth');
-        $NS$.Channel($NS$.aid).pub('undo_skippable');
+        $NS$.Channel.get($NS$.aid).pub('undo_skippable');
         self.video.setAttribute('muted', 'muted');  
         self.video.volume = 0;
         self.mute();
@@ -268,7 +268,7 @@ PreviewInlineVideoANDROID.prototype = {
     skippable : function (sec) {
 
         var self = this;
-        $NS$.Channel($NS$.aid).sub('do_skippable', function () {
+        $NS$.Channel.get($NS$.aid).sub('do_skippable', function () {
             
             var skippable = document.createElement('span');
             skippable.className = skippableClass;

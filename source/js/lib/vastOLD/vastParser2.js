@@ -182,7 +182,7 @@ VastParser.prototype.unwrap = function () {
 
 		self.getXML(true);	
 	} else {
-		$NS$.Channel(self.options.ChannelID).pub('noLinearsShutUpInRead');
+		$NS$.Channel.get(self.options.ChannelID).pub('noLinearsShutUpInRead');
 	}
 };
 
@@ -383,7 +383,7 @@ VastParser.prototype.getCreatives = function () {
 
 	if (l == 0) {
 	
-		$NS$.Channel(self.options.ChannelID).pub('noLinearsShutUpInRead');
+		$NS$.Channel.get(self.options.ChannelID).pub('noLinearsShutUpInRead');
 		return;
 	}
 	

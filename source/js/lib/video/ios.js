@@ -266,7 +266,7 @@ PreviewInlineVideoIOS.prototype._ended = function () {
     var self = this;
     $NS$.dom.attr(self.video, 'stealth', 'stealth');
     self.video.setAttribute('muted', 'muted');  
-    $NS$.Channel($NS$.aid).pub('undo_skippable');
+    $NS$.Channel.get($NS$.aid).pub('undo_skippable');
     
 
 
@@ -319,7 +319,7 @@ PreviewInlineVideoIOS.prototype._startPlayback = function () {
     
     $NS$.dom.removeAttr(this.cnv, 'stealth');
     
-    $NS$.Channel($NS$.aid).pub('do_skippable');
+    $NS$.Channel.get($NS$.aid).pub('do_skippable');
 };
 
 
@@ -374,7 +374,7 @@ PreviewInlineVideoIOS.prototype._loop = function () {
 
 
                 // self.playback && msgSender('collapse' + '_' + $NS$.aid)
-                self.playback && $NS$.Channel($NS$.aid).pub('canvasVideoEnded');
+                self.playback && $NS$.Channel.get($NS$.aid).pub('canvasVideoEnded');
 
 
                 window.setTimeout(function () {self._againPreview();}, 100);
@@ -401,7 +401,7 @@ PreviewInlineVideoIOS.prototype._againPreview = function() {
 
     $NS$.dom.attr(this.cnv, 'stealth', 'stealth');
 
-    $NS$.Channel($NS$.aid).pub('undo_skippable');
+    $NS$.Channel.get($NS$.aid).pub('undo_skippable');
 
     $NS$.events.on(this.cnv, 'click', function () {
         if(!self.playback){
@@ -457,14 +457,14 @@ PreviewInlineVideoIOS.prototype.skippable = function (sec) {
     var self = this,
         skippable;
 
-    $NS$.Channel($NS$.aid).sub('undo_skippable', function () {
+    $NS$.Channel.get($NS$.aid).sub('undo_skippable', function () {
         setTimeout(function () {
 
             $NS$.dom.remove(skippable);  
         }, 100);
         
     });
-    $NS$.Channel($NS$.aid).sub('do_skippable', function () {
+    $NS$.Channel.get($NS$.aid).sub('do_skippable', function () {
         
         skippable = document.createElement('span');
         skippable.className = skippableClass;
