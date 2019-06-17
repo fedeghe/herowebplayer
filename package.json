@@ -25,7 +25,9 @@
         "malta-header-comment": "^1.0.5",
         "malta-js-obfuscator": "^1.0.11",
         "malta-js-toolkit": "^1.0.11",
-        "malta-less": "^1.0.7",
+        "malta-less": "^1.0.7"
+    },
+    "dependencies": {
         "widgzard": "^3.1.15"
     }
 }
