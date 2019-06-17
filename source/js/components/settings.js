@@ -1,4 +1,4 @@
-SETTINGS = {
+var SETTINGS = {
 	wid : 'settings',
 	data : {
 		speed : "#PARAM{speed}",
@@ -26,12 +26,10 @@ SETTINGS = {
 					var self = this,
 						$elf = self.node,
 						video = self.getNode('mainvideo').node;
-
 					$NS$.events.on($elf, 'input', function () {
 						self.parent.descendant(1).node.innerHTML = this.value;
 						video.playbackRate = this.value;
 					});
-
 					self.done();
 				}
 			},{
@@ -58,8 +56,7 @@ SETTINGS = {
 				tag : 'label',
 				html : '&bull; filters',
 			}, {
-				tag : 'select',
-				attrs : {name : 'filters'},
+                tag: 'span',
 				cb : function () {
 					var self = this,
 						$elf = self.node,
@@ -79,23 +76,29 @@ SETTINGS = {
 					for (i in filters) {
 						dfilters.push(newFilter(i, i))
 					}
-					$NS$.Widgzard.render({target : $elf, content : dfilters})
+					$NS$.Widgzard.render({
+                        target : $elf,
+                        tag : 'select',
+                        attrs : {name : 'filters'},
+                        content : dfilters,
+                        onChange: function (e) {
+                            var val = e.target.value;
+                            if (val !== '') {
+                                video.style['webkitFilter']='url(#'+filters[val]+')';
+                                video.style['mozFilter']='url(#'+filters[val]+')';
+                                video.style['filter']='url(#'+filters[val]+')';
+                            } else {
+                                video.style['webkitFilter']='';
+                                video.style['mozFilter']='';
+                                video.style['filter']='';
+                            }
+                            $NS$.events.kill(e)
+                        }
+                    });
 
-					console.log(dfilters)
+					// console.log(dfilters)
 
-					$NS$.events.on($elf, 'change', function (e) {
-						var val = this.value;
-						if (val !== '') {
-							video.style['webkitFilter']='url(#'+filters[val]+')';
-							video.style['mozFilter']='url(#'+filters[val]+')';
-							video.style['filter']='url(#'+filters[val]+')';
-						} else {
-							video.style['webkitFilter']='';
-							video.style['mozFilter']='';
-							video.style['filter']='';
-						}
-						$NS$.events.kill(e)
-					})
+					
 					$NS$.events.on($elf, 'click', function (e) {
 						$NS$.events.kill(e)
 					})
@@ -108,7 +111,6 @@ SETTINGS = {
 
 				if (!self.climb(2).data.filters) 
 					$NS$.dom.remove($elf);
-				// if (navigator.userAgent.match(/Safari/)) $NS$.dom.remove($elf);
 				
 				self.done();
 			}
@@ -129,4 +131,4 @@ SETTINGS = {
 		
 		self.done();
 	}
-};
+}

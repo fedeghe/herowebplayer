@@ -1,4 +1,4 @@
-FILTERS = {
+var FILTERS = {
 	wid : 'filters',
 	tag : "svg",
 	// style : {display : 'none'},
@@ -223,7 +223,7 @@ FILTERS = {
 				this.done();
 			}
 		},{
-			tag : 'filter',
+			tag : 'filter', 
 			content : [{
 				tag : 'feColorMatrix',
 				attrs : {
@@ -242,4 +242,4 @@ FILTERS = {
 	cb : function () {
 		this.done();
 	}
-};
+}

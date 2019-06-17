@@ -14,11 +14,6 @@
 		"AUTHOR" : "Federico Ghedina <federico.ghedina@gmail.com>",
 		"LICENSE" : ""
 	},
-	"COMPONENTS" : {
-		"NAME_PREPEND" : "",
-		"NAME_POSTPEND" : ".js",
-		"URL" : "/js/components/"
-	},
 	"EVENTS" : {
 		"TRACKING" : {
 			"ENTRY_POINT" : "/ev.php"

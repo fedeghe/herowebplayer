@@ -20,8 +20,9 @@ $$xmlParser.js$$
 $$vast.js$$
 $$i18n.js$$
 $$promise.js$$
+
 $$ext/widgzard.js$$
-$$engy.js$$
+
 $$speedTest.js$$
 $$eventsTracker.js$$
 $$hwp_public.js$$

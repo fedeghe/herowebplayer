@@ -1,4 +1,4 @@
-PLAYER = {
+var PLAYER = {
 	style : {
 		position : "relative",
 		backgroundColor :'black',
@@ -387,6 +387,7 @@ PLAYER = {
 		wid : 'cnvs',
 		style : {display : 'none'},
 		cb : function () {
+
 			var self = this,
 				$elf = self.node;
 			$elf.width = self.data.width;
@@ -394,4 +395,4 @@ PLAYER = {
 			self.done();
 		}
 	}]
-};
+}

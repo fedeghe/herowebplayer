@@ -1,4 +1,4 @@
-PANEL = {
+var PANEL = {
 	wid : 'panel',
 	attrs : {
 		"class" : "panel"
@@ -524,4 +524,4 @@ PANEL = {
 */
 		self.done();
 	}
-};
+}
