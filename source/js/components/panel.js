@@ -24,7 +24,7 @@ var PANEL = {
 			attrs : {"class" : "previewtime"},
 			content : [{tag:'span'}]
 		},{
-			tag : 'video',
+            tag : 'video',
 			attrs : {
 				preload : true
 			},
@@ -64,7 +64,7 @@ var PANEL = {
 
 				// e && 'onpreview' in mainVideo.data.events && mainVideo.data.events.onpreview(e, t, parseFloat(p.toFixed(2), 10));
 				e  && mainVideo.data.trigger('onpreview', [e, t, parseFloat(p.toFixed(2), 10)]);
-				$video.currentTime = t;
+                $video.currentTime = t;
 				//then the canPlay will be triggered at some point allowing the handler to paint the preview frame
 			};
 		}

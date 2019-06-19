@@ -379,6 +379,7 @@ var PLAYER = {
 			muted : "#PARAM{muted}"
 		}
 	},{
+        // this is a preview canvas for the screenshot
 		tag : 'canvas',
 		data : {
 			width : "#PARAM{width}",
