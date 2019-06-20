@@ -53,7 +53,7 @@ var PANEL = {
 				$video = video.node;
 
 			self.data.showPreviewAt = function (p, e) {
-				
+				// console.log(p, $video)
 				var duration = $video.duration,
 					t = duration * (p / 100),
 					time = self.descendant(1, 0);
@@ -176,17 +176,15 @@ var PANEL = {
 
 			data.addAdMarker = function (start, len) {
 				$NS$.Widgzard.render({
-					target  :$elf,
-					content : [{
-						attrs : {"class" : "ad"},
-						style : {left : start + "%", width : len + '%'}
-					}]
+					target  :$elf,				
+                    attrs : {"class" : "ad"},
+                    style : {left : start + "%", width : len + '%'}
 				})
 			}
 			self.done();
 		},
 		end : function () {
-			 // this.data.addAdMarker(3,0.3);
+			//  this.data.addAdMarker(3,0.3);
 			// this.data.addAdMarker(20,15);
 			// this.data.addAdMarker(50,0.5);
 		}
