@@ -2,13 +2,13 @@ var FILTERS = {
 	wid : 'filters',
 	tag : "svg",
 	// style : {display : 'none'},
-	attrs : {height : 0, version : 1.1, xmlns : "http://www.w3.org/2000/svg"},
+	attrs : {version : 1.1, xmlns : "http://www.w3.org/2000/svg"},
 	ns : "http://www.w3.org/2000/svg",
 	data : {
 		filters : {},
 		add : function (name, val) {
-			this.filters[name] = val;
-		}
+            this.filters[name] = val;
+        }
 	},
 	content : [{
 		tag : 'defs',
@@ -20,7 +20,7 @@ var FILTERS = {
 			}],
 			cb : function () {
 				this.root.data.vid = $NS$.util.uniqueid + ""
-				var id = this.root.data.vid + '_blurEffect';
+				var id = this.root.data.vid + 'blurEffect';
 				this.node.setAttribute('id', id);
 				this.parent.parent.data.add('blurEffect', id);
 				this.done();
@@ -35,7 +35,7 @@ var FILTERS = {
 				}
 			}],
 			cb : function () {
-				var id = this.root.data.vid + '_blur';
+				var id = this.root.data.vid + 'blur';
 				this.node.setAttribute('id', id);
 				this.parent.parent.data.add('blur', id);
 				this.done();
@@ -65,7 +65,7 @@ var FILTERS = {
 				}]
 			}],
 			cb : function () {
-				var id = this.root.data.vid + '_inverse';
+				var id = this.root.data.vid + 'inverse';
 				this.node.setAttribute('id', id);
 				this.parent.parent.data.add('inverse', id);
 				this.done();
@@ -82,8 +82,9 @@ var FILTERS = {
 				}
 			}],
 			cb : function () {
-				var id = this.root.data.vid + '_convolve';
-				this.node.setAttribute('id', id);
+				var id = this.root.data.vid + 'convolve';
+                this.node.setAttribute('id', id);
+                
 				this.parent.parent.data.add('convolve', id);
 				this.done();
 			}
@@ -96,7 +97,7 @@ var FILTERS = {
 				}
 			}],
 			cb : function () {
-				var id = this.root.data.vid + '_blackAndWhite';
+				var id = this.root.data.vid + 'blackAndWhite';
 				this.node.setAttribute('id', id);
 				this.parent.parent.data.add('black & white', id);
 				this.done();
@@ -129,7 +130,7 @@ var FILTERS = {
 				}]
 			}],
 			cb : function () {
-				var id = this.root.data.vid + '_convoblur';
+				var id = this.root.data.vid + 'convoblur';
 				this.node.setAttribute('id', id);
 				this.parent.parent.data.add('convolve & blur', id);
 				this.done();
@@ -147,7 +148,7 @@ var FILTERS = {
 				}
 			}],
 			cb : function () {
-				var id = this.root.data.vid + '_convolve2';
+				var id = this.root.data.vid + 'convolve2';
 				this.node.setAttribute('id', id);
 				this.parent.parent.data.add('convolve 2', id);
 				this.done();
@@ -185,7 +186,7 @@ var FILTERS = {
 				}]
 			}],
 			cb : function () {
-				var id = this.root.data.vid + '_bluefill';
+				var id = this.root.data.vid + 'bluefill';
 				this.node.setAttribute('id', id);
 				this.parent.parent.data.add('Blue fill', id);
 				this.done();
@@ -217,7 +218,7 @@ var FILTERS = {
 				}]
 			}],
 			cb : function () {
-				var id = this.root.data.vid + '_noir';
+				var id = this.root.data.vid + 'noir';
 				this.node.setAttribute('id', id);
 				this.parent.parent.data.add('Noir', id);
 				this.done();
@@ -232,14 +233,11 @@ var FILTERS = {
 				}
 			}],
 			cb : function () {
-				var id = this.root.data.vid + '_bw';
+				var id = this.root.data.vid + 'bw';
 				this.node.setAttribute('id', id);
 				this.parent.parent.data.add('Black & White', id);
 				this.done();
 			}
 		}]
-	}],
-	cb : function () {
-		this.done();
-	}
+	}]
 }

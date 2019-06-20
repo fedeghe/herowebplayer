@@ -83,6 +83,7 @@ var SETTINGS = {
                         content : dfilters,
                         onChange: function (e) {
                             var val = e.target.value;
+                            console.log(video, val)
                             if (val !== '') {
                                 video.style['webkitFilter']='url(#'+filters[val]+')';
                                 video.style['mozFilter']='url(#'+filters[val]+')';
@@ -95,10 +96,6 @@ var SETTINGS = {
                             $NS$.events.kill(e)
                         }
                     });
-
-					// console.log(dfilters)
-
-					
 					$NS$.events.on($elf, 'click', function (e) {
 						$NS$.events.kill(e)
 					})
@@ -107,9 +104,10 @@ var SETTINGS = {
 			}],
 			cb : function () {
 				var self = this,
-					$elf = self.node;
+                    $elf = self.node,
+                    filters = self.getNode('filters');
 
-				if (!self.climb(2).data.filters) 
+				if (!filters.data.filters) 
 					$NS$.dom.remove($elf);
 				
 				self.done();

@@ -9,24 +9,27 @@ HWP.render({
         width: 640,
         ratio: 16 / 9,
         sources: {
-            mp4: 'media/sintel.mp4',
-            webm: 'media/sintel.webm',
-            ogg: 'media/sintel.ogv',
-            poster: 'media/sintel.png',
+            mp4: '/media/sintel.mp4',
+            webm: '/media/sintel.webm',
+            ogg: '/media/sintel.ogv',
+            poster: '/media/sintel.png',
             tracks: [{
                 'default': 'default',
-                src: 'media/text-en.vtt', // the url of the track file
+                src: '/media/text-en.vtt', // the url of the track file
                 kind: 'subtitles', // choose among [captions, chapters, descriptions, metadata, subtitles]
                 srclang: 'en', // language code
                 label: '' // just text
             }]
         },
-        theme: 'bgOrange fgWhite',
+        theme: {
+            background: 'bgOrange',
+            foreground: 'fgWhite'
+        },
         autoplay: false,
         muted: false,
         loop: false,
         offset: 0,
-        preload: 'preload',
+        preload: 'auto',
         volume: 0.25,
         buttons: {
             size: 'large'
@@ -41,7 +44,7 @@ HWP.render({
             },
             screenshot: true,
             timeline: {
-                size: 'small', // small,medium,large
+                size: 'large', // small,medium,large
                 preview: true,
                 playcolor: 'white'
             }

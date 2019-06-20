@@ -7,11 +7,12 @@ $NS$.makeNS('$NS$/dom', function () {
         _out = {
 
             addClass : function (elem, addingClass) {
-                var cls = !!(elem.className) ? elem.className : '',
-                    reg = new RegExp('(\\s|^)' + addingClass + '(\\s|$)');
-                if (!cls.match(reg)) {
-                    elem.className = addingClass + ' '+ cls;
-                }
+                // var cls = !!(elem.className) ? elem.className : '',
+                //     reg = new RegExp('(\\s|^)' + addingClass + '(\\s|$)');
+                // if (!cls.match(reg)) {
+                //     elem.className = addingClass + ' '+ cls;
+                // }
+                elem.classList.add(addingClass);
                 return true;
             },
 
@@ -92,14 +93,16 @@ $NS$.makeNS('$NS$/dom', function () {
             },
 
             hasClass : function (elem, className) {
-                return !!(elem.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)')))
+                return elem.classList.contains(className);
+                // return !!(elem.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)')))
             },
 
             removeClass : function (elem, removingClass) {
-                var reg = new RegExp('(\\s|^)' + removingClass + '(\\s|$)');
-                if (elem.className) {
-                    elem.className = elem.className.replace(reg, ' ');
-                }
+                // var reg = new RegExp('(\\s|^)' + removingClass + '(\\s|$)');
+                // if (elem.className) {
+                //     elem.className = elem.className.replace(reg, ' ');
+                // }
+                elem.classList.remove(removingClass);
                 return true;
             },
 
