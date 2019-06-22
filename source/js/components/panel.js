@@ -416,14 +416,12 @@ var PANEL = {
                 $NS$.events.on($elf, 'click', function (e) {
                     var settings = self.getNode('settings'),
                         $settings = settings.node;
-
                     if (settings.data.visible) {
                         $NS$.css.style($settings, 'display', 'none');
                     } else {
                         $NS$.css.style($settings, 'display', 'block');
                     }
                     settings.data.visible = !settings.data.visible;
-
                     video.data.trigger('onsettings' + (settings.data.visible ? 'on' : 'off'), [e]);
                 })
                 self.done();
