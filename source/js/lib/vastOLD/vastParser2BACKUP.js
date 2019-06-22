@@ -123,11 +123,11 @@ VastParser.prototype.getXML = function (forceStraight) {
 		$NS$.io.getJson(self.vastUrl, function (res) {
 			res && res.vastUrl && $NS$.io.getXML(res.vastUrl, go, true);
 		}, true)
-	:
+	    
 		//
 		// otherwise it means
 		//
-		$NS$.io.getXML(self.vastUrl, go, true);
+		: $NS$.io.getXML(self.vastUrl, go, true);
 
 	function go (r) {
 		

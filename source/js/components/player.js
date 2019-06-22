@@ -63,7 +63,7 @@ var PLAYER = {
             };
 
         $NS$.events.on($elf, 'mouseenter', show);
-        // $NS$.events.on($elf, 'mousemove', show);
+        $NS$.events.on($elf, 'mousemove', show);
         $NS$.events.on($elf, 'click', show);
         $NS$.events.on($elf, 'mouseleave', hide);
         $NS$.events.onNoEvent($elf, hide, 5000);
