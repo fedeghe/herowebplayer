@@ -148,8 +148,11 @@ var PANEL = {
                 if (position > w) position = w - preview.node.clientWidth;
                 data.video.currentTime = data.video.duration * (coordX / w);
 
-                // 'onseek' in video.data.events && video.data.events.onseek(e, data.video.currentTime);
-                video.data.trigger('onseek', [e, parseFloat(data.video.currentTime.toFixed(2), 10), parseFloat((100 * data.video.currentTime / data.video.duration).toFixed(2), 10)])
+                video.data.trigger('onseek', [
+                    e,
+                    parseFloat(data.video.currentTime.toFixed(2), 10),
+                    parseFloat((100 * data.video.currentTime / data.video.duration).toFixed(2), 10)
+                ]);
             });
 
             if (data.timeline.preview == false) {
