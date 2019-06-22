@@ -143,7 +143,6 @@ HWP.render({
             }
         }
     }
-}).then(function (p, res) {
-    var player = res[0];
-    console.log(player);
+}).then(function (res) {
+    console.log('player: ', res);
 });
