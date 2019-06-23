@@ -213,26 +213,34 @@ var PLAYER = {
                 $NS$.Widgzard.render(tracks);
             }
 
-            data.attrs.poster && $NS$.dom.attr($elf, { poster: data.attrs.poster });
-            data.attrs.preload && $NS$.dom.attr($elf, { preload: data.attrs.preload }); // auto, metadata, none
-            data.attrs.loop && $NS$.dom.attr($elf, { loop: 'loop' });
+            data.attrs.poster
+            && $NS$.dom.attr($elf, { poster: data.attrs.poster });
+            
+            data.attrs.preload
+            && $NS$.dom.attr($elf, { preload: data.attrs.preload }); // auto, metadata, none
+            
+            data.attrs.loop
+            && $NS$.dom.attr($elf, { loop: 'loop' });
+
+            data.attrs.autoplay
+            && $NS$.dom.attr($elf, { autoplay: 'autoplay' });
 
             if (data.attrs.muted) {
                 $NS$.dom.attr($elf, { muted: 'muted' });
                 $elf.volume = 0;
             }
-            data.attrs.autoplay && $NS$.dom.attr($elf, { autoplay: 'autoplay' });
 
             $NS$.events.on($elf, 'loadeddata', function (e) {
                 data.trigger('onloadeddata', [e]);
-
                 // $NS$.css.style($parent, 'display', 'block');
             });
 
             $NS$.events.on($elf, 'loadedmetadata', function (e) {
                 data.trigger('onloadedmetadata', [e]);
                 data.duration = $elf.duration;
-                if (self.data.offset) $elf.currentTime = self.data.offset;
+                if (self.data.offset) {
+                    $elf.currentTime = self.data.offset;
+                }
             });
 
             $NS$.events.on($elf, 'ended', function (e) {
@@ -264,9 +272,11 @@ var PLAYER = {
                         $elf.playpause();
                 }
             });
+
             $NS$.events.one($elf, 'play', function (e) {
                 if (self.data.offset) $elf.currentTime = 0;
-            })
+            });
+
             $NS$.events.on($elf, 'play', function (e) {
                 var $playButton = self.getNode('panelPlayButton').node;
                 if ($elf.currentTime < 1) {
@@ -283,7 +293,6 @@ var PLAYER = {
                 self.data.isPlaying = false;
                 self.data.trigger('onpause', [e, cTime, perc]);
             });
-
 
             $NS$.events.on(document, ['webkitfullscreenchange', 'mozfullscreenchange', 'fullscreenchange', 'MSFullscreenChange'], function (e) {
                 //var status = $NS$.video.fullscreen.status();
