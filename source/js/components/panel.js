@@ -98,7 +98,7 @@ var PANEL = {
                 $NS$.video.loader(video, $video, function (v) {
                     $NS$.css.style($elf, 'width', v + '%');
                 }, function (v) {
-                    // console.debug('end ' + v);
+                    console.debug('end ' + v);
                 });
                 self.done();
             }
