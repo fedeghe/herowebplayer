@@ -69,7 +69,11 @@ var PANEL = {
                 t = parseFloat(t.toFixed(2), 10);
 
                 // e && 'onpreview' in mainVideo.data.events && mainVideo.data.events.onpreview(e, t, parseFloat(p.toFixed(2), 10));
-                e && mainVideo.data.trigger('onpreview', [e, t, parseFloat(p.toFixed(2), 10)]);
+                e && mainVideo.data.trigger('onpreview', [
+                    e,
+                    t,
+                    parseFloat(p.toFixed(2), 10)
+                ]);
                 $video.currentTime = t;
                 //then the canPlay will be triggered at some point allowing the handler to paint the preview frame
             };
@@ -120,9 +124,12 @@ var PANEL = {
                         perc = ~~(100 * time / duration);
                     $NS$.css.style($elf, 'width', ~~(100 * time / duration) + '%')
 
-
-                    // 'ontimeupdate' in video.data.events && video.data.events.ontimeupdate(e, t, d, p);
-                    video.data.trigger('ontimeupdate', [e, parseFloat(time.toFixed(2), 10), duration, perc]);
+                    video.data.trigger('ontimeupdate', [
+                        e,
+                        parseFloat(time.toFixed(2), 10),
+                        duration,
+                        perc
+                    ]);
                 });
 
                 self.done();
@@ -220,8 +227,7 @@ var PANEL = {
                     if (!vdata.isPlaying) versus = versus.reverse();
                     $NS$.dom.switchClass.apply(null, [self.children[0].node].concat(versus));
                     $NS$.dom.attr($elf, {
-                        title:
-                            vdata.isPlaying ? $NS$.i18n.get('pause') : $NS$.i18n.get('play')
+                        title: vdata.isPlaying ? $NS$.i18n.get('pause') : $NS$.i18n.get('play')
                     });
                 });
 
