@@ -190,7 +190,7 @@ var PLAYER = {
                 $elf = self.node,
                 data = self.data,
                 $parent = self.parent.node,
-                tracks = { target: $elf, content: [] },
+                // tracks = { target: $elf, content: [] },
                 i, l, tmp = {};
 
             data.isPlaying = false;
@@ -199,18 +199,23 @@ var PLAYER = {
             if (self.data.tracks) {
                 for (i = 0, l = self.data.tracks.length; i < l; i++) {
                     (function (trk) {
-                        var obj = { tag: 'track', attrs: {}, style: {} };
+                        var obj = {
+                            target: $elf,
+                            tag: 'track',
+                            attrs: {},
+                            style: {}
+                        };
                         'default' in trk && (obj.attrs.default = trk.default);
                         'src' in trk && (obj.attrs.src = trk.src);
                         'kind' in trk && (obj.attrs.kind = trk.kind);
                         'srclang' in trk && (obj.attrs.srclang = trk.srclang);
                         'label' in trk && (obj.attrs.label = trk.label);
+
                         obj.style.backgroundColor = 'red';
-                        tracks.content.push(obj);
+
+                        $NS$.Widgzard.render(obj);
                     })(self.data.tracks[i]);
                 }
-
-                $NS$.Widgzard.render(tracks);
             }
 
             data.attrs.poster
