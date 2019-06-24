@@ -190,7 +190,7 @@ var PLAYER = {
                 $elf = self.node,
                 data = self.data,
                 $parent = self.parent.node,
-                // tracks = { target: $elf, content: [] },
+                    // tracks = { target: $elf, content: [] },
                 i, l, tmp = {};
 
             data.isPlaying = false;
