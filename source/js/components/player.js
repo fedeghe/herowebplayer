@@ -96,6 +96,8 @@ var PLAYER = {
             self.done();
         }
     }, {
+        component: 'filters'
+    }, {
         tag: "video",
         wid: "mainvideo",
         text: "#PARAM{supportMessage|video not supported}",
@@ -366,8 +368,6 @@ var PLAYER = {
                     parseInt($parent.style.height, 10)
                 );
         }
-    }, {
-        component: 'filters'
     }, {
         component: 'panel',
         params: {

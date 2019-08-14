@@ -1,0 +1,133 @@
+<svg id='image' version="1.1" 
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="blurEffect">
+            <feGaussianBlur stdDeviation="4"/>
+        </filter>
+        <filter id="turbulence">
+            <feTurbulence baseFrequency=".01" type="fractalNoise" numOctaves="3" seed="23" stitchTiles="stitch"/>
+        </filter>
+        <filter id="blur">
+            <feGaussianBlur stdDeviation="10,3" result="outBlur"/>
+        </filter>
+        <filter id="inverse">
+            <feComponentTransfer>
+                <feFuncR type="table" tableValues="1 0"/>
+                <feFuncG type="table" tableValues="1 0"/>
+                <feFuncB type="table" tableValues="1 0"/>
+            </feComponentTransfer>
+        </filter>
+        <filter id="convolve">
+            <feConvolveMatrix order="3" kernelMatrix="1 -1  1 -1 -0.01 -1 1 -1 1" edgeMode="duplicate" result="convo"/>
+        </filter>
+        <filter id="convoblur">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+            <feConvolveMatrix order="3" kernelMatrix="1 -1  1 -1 -0.01 -1 1 -1 1" edgeMode="none" result="convo"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="convo"/>
+            </feMerge>
+        </filter>
+        <filter id="blackandwhite">
+            <feColorMatrix values="0.3333 0.3333 0.3333 0 0
+                                 0.3333 0.3333 0.3333 0 0
+                                0.3333 0.3333 0.3333 0 0
+                                0      0      0      1 0"/>
+        </filter>
+        <filter id="convolve2">
+            <feConvolveMatrix filterRes="100 100" style="color-interpolation-filters:sRGB" order="3" kernelMatrix="0 -1 0   -1 4 -1   0 -1 0" preserveAlpha="true"/>
+        </filter>
+        <filter id="offset" x="-10%" y="-20%" height="230%" width="140%" transform="translate(90,0)">
+            <feGaussianBlur stdDeviation="14"/>
+            <feOffset dx="0" dy="240" result="B"/>
+            <feMerge>
+                <feMergeNode in="B"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <filter id="myblur">
+            <feGaussianBlur stdDeviation="1"/>
+        </filter>
+        <filter id="myconvolve">
+            <feConvolveMatrix filterRes="100 100" style="color-interpolation-filters:sRGB" order="3" kernelMatrix="0 -1 0   -1 4 -1   0 -1 0" preserveAlpha="true"/>
+        </filter>
+        <filter id="displacement" x="0%" y="0%" height="100%" width="100%">
+            <feDisplacementMap scale="100" in2="SourceGraphic" xChannelSelector="G"/>
+        </filter>
+        <filter id="bluefill" x="0%" y="0%" width="100%" height="100%">
+            <feFlood flood-color="blue" result="A"/>
+            <feColorMatrix type="matrix" in="SourceGraphic" result="B" values="1   0  0  0 0  
+                           0   1  0  0 0   
+                           0   0  1  0 0   
+                           1   1  1  0 0
+                  "/>
+            <feMerge>
+                <feMergeNode in="A"/>
+                <feMergeNode in="B"/>
+            </feMerge>
+        </filter>
+        <filter id="noir">
+            <feGaussianBlur stdDeviation="1.5"/>
+            <feComponentTransfer>
+                <feFuncR type="discrete" tableValues="0 .5 1 1"/>
+                <feFuncG type="discrete" tableValues="0 .5 1"/>
+                <feFuncB type="discrete" tableValues="0"/>
+            </feComponentTransfer>
+        </filter>
+    </defs>
+</svg>
+
+<svg version="1.1" 
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="HWP6blurEffect">
+            <fegaussianblur stddeviation="4"></fegaussianblur>
+        </filter>
+        <filter id="HWP6blur">
+            <fegaussianblur stddeviation="10,3" result="outBlur"></fegaussianblur>
+        </filter>
+        <filter id="HWP6inverse">
+            <fecomponenttransfer>
+                <fefuncr type="table" tablevalues="1 0"></fefuncr>
+                <fefuncg type="table" tablevalues="1 0"></fefuncg>
+                <fefuncb type="table" tablevalues="1 0"></fefuncb>
+            </fecomponenttransfer>
+        </filter>
+        <filter id="HWP6convolve">
+            <feconvolvematrix order="3" kernelmatrix="1 -1  1 -1 -0.01 -1 1 -1 1" edgemode="duplicate" result="convo"></feconvolvematrix>
+        </filter>
+        <filter id="HWP6blackAndWhite">
+            <fecolormatrix values="0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0"></fecolormatrix>
+        </filter>
+        <filter id="HWP6convoblur">
+            <fegaussianblur in="SourceGraphic" stddeviation="6" result="blur"></fegaussianblur>
+            <feconvolvematrix order="3" kernelmatrix="1 -1  1 -1 -0.01 -1 1 -1 1" edgemode="none" result="convo"></feconvolvematrix>
+            <femerge>
+                <femergenode in="blur"></femergenode>
+                <femergenode in="convo"></femergenode>
+            </femerge>
+        </filter>
+        <filter id="HWP6convolve2">
+            <feconvolvematrix filterres="100 100" order="3" kernelmatrix="0 -1 0   -1 4 -1   0 -1 0" preservealpha="true"></feconvolvematrix>
+        </filter>
+        <filter x="0%" y="0%" width="100%" height="100%" id="HWP6bluefill">
+            <feflood flood-color="blue" result="A"></feflood>
+            <fecolormatrix type="matrix" in="SourceGraphic" result="B" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  1 1 1 0 0"></fecolormatrix>
+            <femerge>
+                <femergenode in="A"></femergenode>
+                <femergenode in="B"></femergenode>
+            </femerge>
+        </filter>
+        <filter x="0%" y="0%" width="100%" height="100%" id="HWP6noir">
+            <fegaussianblur stddeviation="1.5"></fegaussianblur>
+            <fecomponenttransfer>
+                <fefuncr type="discrete" tablevalues="0 .5 1 1"></fefuncr>
+                <fefuncg type="discrete" tablevalues="0 .5 1"></fefuncg>
+                <fefuncb type="discrete" tablevalues="0"></fefuncb>
+            </fecomponenttransfer>
+        </filter>
+        <filter id="HWP6bw">
+            <fecolormatrix type="matrix" values="0.3333 0.3333 0.3333 0 0  0.3333 0.3333 0.3333 0 0  0.3333 0.3333 0.3333 0 0  0 0 0 1 0"></fecolormatrix>
+        </filter>
+    </defs>
+</svg>
