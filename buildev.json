@@ -11,8 +11,8 @@
     "source/less/hwp.less" : "css -plugins=malta-less -vars=vars.json",
     "source/less/font-awesome.min.css" : "css -plugins=malta-less -vars=vars.json",
 
-    "source/front/*.html" : ". -plugins=malta-browser-refresh[files:\"*\"]...malta-dev-srv",
-    "#source/front/*.html" : ". -plugins=malta-browser-refresh[files:\"*\"]...malta-dev-srv[staticEp:'index.html',staticFree:'css|js|media']",
+    "source/front/*.html" : ". -plugins=malta-browser-refresh...malta-dev-srv",
+    "#source/front/*.html" : ". -plugins=malta-browser-refresh...malta-dev-srv[staticEp:'index.html',staticFree:'css|js|media']",
 	"source/front/*.js" : "js -vars=vars.json",
 	"source/front/*.less" : "css -plugins=malta-less -vars=vars.json "
 }
